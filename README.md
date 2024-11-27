@@ -7,7 +7,7 @@ Let $L$ be the list of the search tree(subtree) $T$ whose root is $r$.
 Suppose that the branching vector of $r$ is $(d_1,d_2)$. Let $L_1$ and $L_2$ be the lists of the left son and rigth son of node $r$.
 Then the list of $T$ is described as $\{(d_1,d_2),L_1,L_2\}$ in our output.
 
-Python Scripts/code1.py This python script to generate the searching trees when $vc(H^v) \ge 4$. Since we only have Lemmas for $vc(H^v) = 4$, it is enough to show the result when $vc(H^v) = 4$ and $vc(H^v) = 5$ for our proof.
+Python Scripts/code1.py This python script to generate the searching trees when $vc(H^v) \ge 4$. Since we only have lemmas to reduce the search trees when $vc(H^v) = 4$, it is enough to only generate the search trees when $vc(H^v) = 4$ and $vc(H^v) = 5$ for our proof.
 
 Python Scripts/code2.py This python script to generate the searching trees when $vc(H^v) = 4$. The ouput contains the structure of search trees, the branching vector and the corresponding branching factor,
 
