@@ -67,50 +67,42 @@ Hv_branches = dict()
 #find the original branching vectors
 vectors4 = find_Hv(4, 0)
 vectors5 = find_Hv(5, 0)
-vectors6 = find_Hv(6, 0)
+
 vectors4.sort()
 vectors5.sort()
-vectors6.sort()
+
 
 # check the lemmas 
-for v in vectors4 + vectors5 + vectors6:
+tmp = vectors4 + vectors5
+
+for v in tmp:
     if len(v)>=2 and (v[0]==(1,3) or v[0]==(1,4)) and v[1]==(1,2):
         if v in vectors4 :
             vectors4.remove(v)
         if v in vectors5 : 
             vectors5.remove(v)
-        if v in vectors6 :
-            vectors6.remove(v)
+
     if v[0]!=(1) and v[0]!=(2) and v[0]!=(1,4) and v.count((1,2))!=0:
         if v in vectors4 :
             vectors4.remove(v)
         if v in vectors5 : 
             vectors5.remove(v)
-        if v in vectors6 :
-            vectors6.remove(v)
+
 
 
 # output 
 for vec in vectors4:
     count = 0
     vector = [1] + get_vector()
-    if value(vector)>1.755:
-        print ('B4 ',vec,' ',vector,' ',value(vector))
+    if value(vector)>1.7549:
+        print ('vc=4 ',vec,' ',vector,' ',value(vector))
 
     
 for vec in vectors5:
     count = 0
     vector = [1] + get_vector()
-    if value(vector)>1.755:
-        print ('B5 ',vec,' ',vector,' ',value(vector))
-
-for vec in vectors6:
-    count = 0
-    vector = [1] + get_vector()
-    if value(vector)>1.755:
-        print ('B6 ',vec,' ',vector,' ',value(vector))
-
-
+    if value(vector)>1.7549:
+        print ('vc=5 ',vec,' ',vector,' ',value(vector))
 
 
 
