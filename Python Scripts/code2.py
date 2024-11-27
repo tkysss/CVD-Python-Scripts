@@ -65,27 +65,23 @@ def get_vector():
 Hv_branches = dict()
 
 #find the original branching vectors
-vectors3 = find_Hv(3, 0)
-vectors3.sort()
+vectors4 = find_Hv(4, 0)
+vectors4.sort()
 
 # check the lemmas 
-for v in vectors3:
-    if len(v)>=2 and (v[0]==(1,3) or v[0]==(1,4)) and v[1]==(1,2):
-        if v in vectors3 :
-            vectors3.remove(v)
+tmp = vectors4.copy()
+for v in tmp :
+    if (v[0]==(1,3) or v[0]==(1,4)) and v[1]==(1,2):
+        if v in vectors4 :
+            vectors4.remove(v)
     if v[0]!=(1) and v[0]!=(2) and v[0]!=(1,4) and v.count((1,2))!=0:
-        if v in vectors3 :
-            vectors3.remove(v)
+        if v in vectors4 :
+            vectors4.remove(v)
 
 
 # output 
-for vec in vectors3:
+for vec in vectors4:
     count = 0
-    vector = [2] + get_vector()
-    if value(vector)>1.74:
-        print ('B3 ',vec,' ',vector,' ',value(vector))
-
-    
-
-
-
+    vector = [1] + get_vector()
+    if value(vector)>1.7549:
+        print ('vc=4 ',vec,' ',vector,' ',value(vector))
